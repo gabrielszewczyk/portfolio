@@ -29,11 +29,21 @@ body {
 
 nav {
     display: flex;
+    position: sticky;
+    top: 20px;
+    background: rgba(68, 71, 90, 0.16);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(68, 71, 90, 0.28);
     justify-content: space-between;
     align-items: center;
     padding: 15px;
-    border: 1px solid var(--border-color);
     border-radius: 5px;
+    z-index: 2;
+}
+
+#about, #programming, #details, #experience, #projects, #contact {
+    scroll-margin-top: 61px;
 }
 
 .shortcuts {
@@ -76,24 +86,26 @@ button {
     display: block;
     padding: 20px;
 }
+
 .prog-row {
     display: flex;
     gap: 20px;
     align-items: flex-start;
 }
+
 .prog-row .lang-list,
 .prog-row .person-description {
     width: 50%;
     box-sizing: border-box;
-} 
+}
 
-/* opis osoby */
 .person-description {
     padding: 12px;
-    background: rgba(255,255,255,0.02);
+    background: rgba(255, 255, 255, 0.02);
     border-radius: 6px;
     min-height: 120px;
 }
+
 .person-description h2 {
     margin-bottom: 8px;
     color: var(--secondary-color);
@@ -101,12 +113,12 @@ button {
 
 .bar-border {
     width: 100%;
-    height: 28px; /* nieco wyższy by pomieścić tekst */
+    height: 28px;
     border: none;
     border-radius: 3px;
     margin: 20px 0;
     display: flex;
-    background: rgba(255,255,255,0.03); /* lekki podkład dla pustej części paska */
+    background: rgba(255, 255, 255, 0.03);
     align-items: center;
     overflow: hidden;
 }
@@ -116,9 +128,9 @@ button {
     background-color: var(--accent-color);
     display: flex;
     align-items: center;
-    justify-content: flex-end; /* tekst po prawej wewnątrz paska */
+    justify-content: flex-end;
     padding-right: 10px;
-    color: var(--bg-color); /* kontrastowy ciemny kolor na jasnym pasku */
+    color: var(--bg-color);
     font-weight: 700;
     white-space: nowrap;
     box-sizing: border-box;
@@ -126,32 +138,27 @@ button {
 }
 
 .progress-text {
-    /* usuń margin-left, kontrola wyrównania przejęta przez .bar-progress */
     margin-left: 0;
-    color: inherit; /* użyje koloru z .bar-progress gdy jest wewnątrz */
+    color: inherit;
     font-weight: 700;
     font-size: 0.9rem;
     pointer-events: none;
 }
 
-/* Gdy etykieta znajduje się poza wypełnieniem (np. przeniesiona jeszcze gdzieś), zapewnia czytelność */
-.bar-border > .progress-text {
+.bar-border>.progress-text {
     position: absolute;
     right: 10px;
     color: var(--text-color);
 }
 
 .details {
+    gap: 20px;
     display: flex;
     justify-content: space-around;
     padding: 20px;
 }
 
-.languages, .skills{
-    padding: 20px;
-}
-
-.languages{
+.languages {
     flex: 1;
     width: auto;
 }
@@ -182,6 +189,10 @@ footer {
     color: var(--text-color);
 }
 
+.bar-progress:hover {
+    background-color: #bd93f9;
+}
+
 button:hover {
     background-color: var(--accent-color);
     color: var(--bg-color);
@@ -192,15 +203,17 @@ button:hover {
     padding-left: 0;
     font-family: 'JetBrains Mono', monospace;
 }
+
 .terminal-list li {
     position: relative;
     padding: 8px 12px 8px 40px;
-    background: rgba(255,255,255,0.02);
+    background: rgba(255, 255, 255, 0.02);
     margin-bottom: 8px;
     border-radius: 4px;
     color: var(--text-color);
     font-size: 0.95rem;
 }
+
 .terminal-list li::before {
     content: "$";
     position: absolute;
@@ -210,6 +223,123 @@ button:hover {
     color: var(--accent-color);
     font-weight: 700;
 }
+
 .terminal-list li:hover::before {
     color: var(--secondary-color);
+}
+
+@media (max-width: 1024px) {
+    header {
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+    }
+    .details {
+        flex-direction: column;
+        gap: 30px;
+        padding: 10px;
+    }
+    .projects {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+    }
+    .short-description{
+        text-align: center;
+    }
+    .shortcuts {
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+    header {
+        flex-direction: column;
+        padding: 10px;
+        gap: 10px;
+    }
+    .main-info {
+        align-items: center;
+        gap: 10px;
+    }
+    .prog-row {
+        flex-direction: column;
+        gap: 16px;
+    }
+    .prog-row .lang-list,
+    .prog-row .person-description {
+        width: 100%;
+    }
+    .details {
+        flex-direction: column;
+        gap: 16px;
+        padding: 5px;
+    }
+    .projects {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 5px;
+    }
+    .project {
+        height: 160px;
+    }
+    footer {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+    }
+    #name {
+        font-size: 1.4em;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 8px;
+        gap: 20px;
+    }
+    nav {
+        padding: 6px;
+        font-size: 0.95em;
+    }
+    .shortcuts {
+        gap: 6px;
+    }
+    header {
+        padding: 6px;
+    }
+    .main-info {
+        gap: 6px;
+    }
+    .short-description{
+        text-align: center;
+    }
+    .prog-row {
+        gap: 8px;
+    }
+    .person-description {
+        padding: 6px;
+        min-height: 80px;
+    }
+    .bar-border {
+        height: 20px;
+        margin: 10px 0;
+    }
+    .progress-text {
+        font-size: 0.8rem;
+    }
+    .project {
+        height: 100px;
+    }
+    footer {
+        padding: 6px;
+        font-size: 0.9em;
+    }
 }
