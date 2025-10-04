@@ -1,0 +1,132 @@
+:root {
+    --bg-color: #282a36;
+    --text-color: #f8f8f2;
+    --accent-color: #50fa7b;
+    --secondary-color: #bd93f9;
+    --border-color: #44475a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    color: var(--text-color);
+}
+
+body {
+    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 20px;
+    gap: 40px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+}
+
+.shortcuts {
+    display: flex;
+    gap: 20px;
+}
+
+.shortcuts a {
+    text-decoration: none;
+    color: var(--accent-color);
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px;
+}
+
+.main-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+#name {
+    font-size: 2em;
+    color: var(--secondary-color);
+}
+
+button {
+    background: transparent;
+    border: 1px solid var(--accent-color);
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.programing {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.bar-border {
+    width: 200px;
+    height: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    margin: 30px;
+}
+
+.bar-progress {
+    width: 70%;
+    height: 100%;
+    background-color: var(--accent-color);
+}
+
+.details {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.languages, .skills {
+    flex: 1;
+    padding: 20px;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.project {
+    height: 200px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin-top: auto;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Hover effects */
+.shortcuts a:hover {
+    color: var(--text-color);
+}
+
+button:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+}
