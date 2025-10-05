@@ -8,6 +8,7 @@ Portfolio osobiste prezentujące umiejętności, doświadczenie oraz projekty Sz
 - [Technologie](#technologie)
 - [Struktura projektu](#struktura-projektu)
 - [Uruchomienie](#uruchomienie)
+- [Demo online](#demo-online)
 - [Autor](#autor)
 - [Licencja](#licencja)
 
@@ -42,6 +43,10 @@ portfolio2/
 1. Skopiuj projekt do katalogu serwera WWW (np. `/opt/lampp/htdocs/portfolio2`).
 2. Upewnij się, że pliki w folderze `assets` są dostępne.
 3. Otwórz `index.html` w przeglądarce lub uruchom lokalny serwer (np. XAMPP/LAMP).
+
+## Demo online
+
+Projekt dostępny pod adresem: [https://gabrielszewczyk.github.io/portfolio/](https://gabrielszewczyk.github.io/portfolio/)
 
 ## Autor
 
