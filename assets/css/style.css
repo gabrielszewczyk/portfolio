@@ -245,9 +245,11 @@ button {
 footer {
     display: flex;
     justify-content: space-between;
+    gap: 20px;
     padding: 20px;
     margin-top: auto;
     border-top: 1px solid var(--border-color);
+    align-items: flex-start;
 }
 
 
@@ -340,6 +342,68 @@ button:hover {
 
 .terminal-list li:hover::before {
     color: var(--secondary-color);
+}
+
+footer h3 {
+    margin: 0 0 8px 0;
+    color: var(--secondary-color);
+    font-size: 1rem;
+}
+
+#contact .contact-item {
+    margin: 6px 0;
+    color: rgba(248,248,242,0.9);
+    font-size: 0.95rem;
+}
+
+#contact .contact-item a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+#contact .contact-note {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: rgba(248,248,242,0.8);
+}
+
+/* lista linków w stopce */
+.footer-links {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.footer-links a {
+    color: var(--accent-color);
+    text-decoration: none;
+    border: 1px solid transparent;
+    padding: 6px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+    font-weight: 700;
+}
+
+.footer-links a:hover {
+    background: var(--accent-color);
+    color: var(--bg-color);
+    border-color: rgba(255,255,255,0.04);
+}
+
+/* responsywność stopki */
+@media (max-width: 768px) {
+    footer {
+        flex-direction: column;
+        gap: 12px;
+    }
+    #contact, #links {
+        width: 100%;
+    }
 }
 
 @media (max-width: 1024px) {
